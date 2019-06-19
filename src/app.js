@@ -3,6 +3,7 @@ const express=require('express')
 const hbs=require('hbs')
 //console.log(path.join(__dirname,'../public'))
 const app=express()
+const port =process.env.PORT || 3000
 const publicDir=path.join(__dirname,'../public')
 const viewPath=path.join(__dirname,'../templates/views')
 const viewPathPartials=path.join(__dirname,'../templates/partials')
@@ -94,6 +95,6 @@ app.get('*',(req,res)=>{
         errorMessage:'page not found!'
     })
 })            
-app.listen(3000,()=>{
-    console.log('Server is up on port number 3000.')
+app.listen(port,()=>{
+    console.log('Server is up on port number '+ port)
 })
